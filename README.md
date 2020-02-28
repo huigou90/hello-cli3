@@ -22,3 +22,8 @@ yarn lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+![avatar](./error_info/1.png)
+
+参考：https://blog.csdn.net/github_35160620/article/details/52206868
