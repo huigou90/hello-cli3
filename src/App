@@ -1,0 +1,48 @@
+<template>
+  <div id="app">
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <el-button @click="message" type="success" icon="el-icon-search" round
+      >OnClick</el-button
+    >
+  </div>
+</template>
+
+<script>
+export default {
+  name: "App",
+  methods: {
+    message() {
+      var thrift = require("thrift");
+      var userService = require("@/api/userService.js");
+      // eslint-disable-line no-unused-vars
+      // var ttypes = require("@/api/test_types.js");
+      var thriftConnection = thrift.createConnection("127.0.0.1", 8000);
+      var thriftClient = thrift.createClient(userService, thriftConnection);
+      thriftConnection.on("error", function(e) {
+        console.log(e);
+      });
+      console.log("success");
+      var dic = { name: "jack" };
+      dic = JSON.stringify(dic);
+      thriftClient.test1(dic, (error, res) => {
+        if (error) {
+          console.error(error);
+        } else {
+          console.log(res);
+        }
+      });
+    }
+  }
+};
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>

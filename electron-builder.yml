@@ -1,0 +1,13 @@
+productName: "hello-cli3"
+appId: "com.sgcc"
+
+asar: true
+
+files:
+  - "build/"
+  - "package.json"
+
+extraResources:
+  - from: "./pydist/thrift_server"
+    to: "./pydist/thrift_server"
+  # - "pydist"
