@@ -1,0 +1,5 @@
+colorama==0.4.1
+win32_setctime==1.0.1
+aiocontextvars==0.2.2
+contextvars==2.4
+odfpy==1.4.1
